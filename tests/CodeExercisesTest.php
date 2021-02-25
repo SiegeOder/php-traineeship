@@ -44,4 +44,16 @@ class CodeExercisesTest extends TestCase
         $this->assertEquals(7, $value[0]);
         $this->assertEquals(6, $value[1]);
     }
+
+    public function testCountWords() : void
+    {
+        $value = $this->exercises->countWords('aaa bbb ccc ddd bbb ccc ddd ccc ddd ddd');
+        $expect = [
+            'ddd' => 4,
+            'ccc' => 3,
+            'bbb' => 2,
+            'aaa' => 1
+        ];
+        $this->assertEquals($expect, $value);
+    }
 }

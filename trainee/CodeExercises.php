@@ -58,4 +58,18 @@ class CodeExercises
     {
         return array_count_values(str_split($value, 1));
     }
+
+    /**
+     * returns popularity of words in a string
+     *
+     * @param string $value
+     * @return array
+     */
+    public function countWords(string $value) : array
+    {
+        $result = array_count_values(str_word_count($value, 1));
+        arsort($result);
+        return $result;
+    }
+
 }

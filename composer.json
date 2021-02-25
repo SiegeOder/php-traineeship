@@ -4,7 +4,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Trainee\\": "trainee/"
+            "Trainee\\Exercises\\": "trainee/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Trainee\\Tests\\": "tests/"
         }
     }
 }

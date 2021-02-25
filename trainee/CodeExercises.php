@@ -72,4 +72,15 @@ class CodeExercises
         return $result;
     }
 
+    /**
+     * checks if a string is a palindrome
+     *
+     * @param string $value
+     * @return bool
+     */
+    public function isPalindrome(string $value) : bool
+    {
+        $value = strtolower(str_replace(' ', '', $value));
+        return strrev($value) == $value;
+    }
 }

@@ -56,4 +56,10 @@ class CodeExercisesTest extends TestCase
         ];
         $this->assertEquals($expect, $value);
     }
+
+    public function testIsPalindrome() : void
+    {
+        $value = $this->exercises->isPalindrome('Was it a cat I saw');
+        $this->assertEquals(true, $value);
+    }
 }

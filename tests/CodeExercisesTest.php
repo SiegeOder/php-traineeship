@@ -26,9 +26,15 @@ class CodeExercisesTest extends TestCase
         $this->assertEquals('MINSK', $value);
     }
 
-    public function test() : void
+    public function testFirstCharacterUpperOtherLower() : void
     {
         $value = $this->exercises->firstCharacterUpperOtherLower('MINSK');
         $this->assertEquals('Minsk', $value);
+    }
+
+    public function testFirstCharacterToExclamationMark() : void
+    {
+        $value = $this->exercises->firstCharacterToExclamationMark('abcde');
+        $this->assertEquals('!bcde', $value);
     }
 }

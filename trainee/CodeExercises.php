@@ -36,4 +36,15 @@ class CodeExercises
     {
         return ucfirst(strtolower($value));
     }
+
+    /**
+     * makes a string first character '!'
+     *
+     * @param string $value
+     * @return string
+     */
+    public function firstCharacterToExclamationMark(string $value) : string
+    {
+        return substr_replace($value, '!', 0, 1);
+    }
 }

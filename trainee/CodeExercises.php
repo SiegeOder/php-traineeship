@@ -47,4 +47,15 @@ class CodeExercises
     {
         return substr_replace($value, '!', 0, 1);
     }
+
+    /**
+     * returns number of values in a string
+     *
+     * @param string $value
+     * @return array
+     */
+    public function countStringValues(string $value) : array
+    {
+        return array_count_values(str_split($value, 1));
+    }
 }

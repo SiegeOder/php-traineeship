@@ -37,4 +37,11 @@ class CodeExercisesTest extends TestCase
         $value = $this->exercises->firstCharacterToExclamationMark('abcde');
         $this->assertEquals('!bcde', $value);
     }
+
+    public function testCountStringValues() : void
+    {
+        $value = $this->exercises->countStringValues('0011100101001');
+        $this->assertEquals(7, $value[0]);
+        $this->assertEquals(6, $value[1]);
+    }
 }

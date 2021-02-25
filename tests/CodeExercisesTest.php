@@ -23,6 +23,12 @@ class CodeExercisesTest extends TestCase
     public function testStringToUpperCase() : void
     {
         $value = $this->exercises->stringToUpperCase('minsk');
-        $this->assertEquals("MINSK", $value);
+        $this->assertEquals('MINSK', $value);
+    }
+
+    public function test() : void
+    {
+        $value = $this->exercises->firstCharacterUpperOtherLower('MINSK');
+        $this->assertEquals('Minsk', $value);
     }
 }

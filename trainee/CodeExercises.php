@@ -25,4 +25,15 @@ class CodeExercises
     {
         return strtoupper($value);
     }
+
+    /**
+     * makes a string first character upper case, other characters lower case
+     *
+     * @param string $value
+     * @return string
+     */
+    public function firstCharacterUpperOtherLower(string $value) : string
+    {
+        return ucfirst(strtolower($value));
+    }
 }

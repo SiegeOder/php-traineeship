@@ -19,4 +19,10 @@ class CodeExercisesTest extends TestCase
         $value = $this->exercises->countDigits(100);
         $this->assertEquals(3, $value);
     }
+
+    public function testStringToUpperCase() : void
+    {
+        $value = $this->exercises->stringToUpperCase('minsk');
+        $this->assertEquals("MINSK", $value);
+    }
 }

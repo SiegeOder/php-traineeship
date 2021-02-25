@@ -14,4 +14,15 @@ class CodeExercises
     {
         return strlen((string) $value);
     }
+
+    /**
+     * makes a string uppercase
+     *
+     * @param string $value
+     * @return string
+     */
+    public function stringToUpperCase(string $value) : string
+    {
+        return strtoupper($value);
+    }
 }

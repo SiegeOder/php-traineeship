@@ -68,4 +68,10 @@ class CodeExercisesTest extends TestCase
         $value = $this->exercises->findLessThanAverage([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         $this->assertEquals([1, 2, 3, 4, 5], $value);
     }
+
+    public function testHasThree() : void
+    {
+        $value = $this->exercises->hasThree([1, 2, 4, 5]);
+        $this->assertEquals(false, $value);
+    }
 }

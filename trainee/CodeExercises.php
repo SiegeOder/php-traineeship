@@ -100,4 +100,15 @@ class CodeExercises
         }
         return $lessThanAverage;
     }
+
+    /**
+     * checks if an array has value 3
+     *
+     * @param array $value
+     * @return bool
+     */
+    public function hasThree(array $value) : bool
+    {
+        return in_array(3, $value, true);
+    }
 }

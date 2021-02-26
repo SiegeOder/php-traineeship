@@ -83,4 +83,21 @@ class CodeExercises
         $value = strtolower(str_replace(' ', '', $value));
         return strrev($value) == $value;
     }
+
+    /**
+     * returns values that are less than the average in an array
+     *
+     * @param array $value
+     * @return array
+     */
+    public function findLessThanAverage(array $value) : array
+    {
+        $average = array_sum($value)/count($value);
+        $lessThanAverage = [];
+        foreach ($value as $item)
+        {
+            if ($item < $average) $lessThanAverage[] = $item;
+        }
+        return $lessThanAverage;
+    }
 }

@@ -62,4 +62,10 @@ class CodeExercisesTest extends TestCase
         $value = $this->exercises->isPalindrome('Was it a cat I saw');
         $this->assertEquals(true, $value);
     }
+
+    public function testFindLessThanAverage() : void
+    {
+        $value = $this->exercises->findLessThanAverage([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        $this->assertEquals([1, 2, 3, 4, 5], $value);
+    }
 }

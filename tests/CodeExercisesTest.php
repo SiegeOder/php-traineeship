@@ -108,4 +108,11 @@ class CodeExercisesTest extends TestCase
         $this->exercises->rsortByType($array);
         $this->assertEquals($sorted, $array);
     }
+
+    public function testExcludeUniqueElements() : void
+    {
+        $array = ['foo', 'bar', 'baz', 'foo', 'bar'];
+        $result = $this->exercises->excludeUniqueElements($array);
+        $this->assertEquals(['foo', 'bar', 'foo', 'bar'], $result);
+    }
 }

@@ -164,4 +164,18 @@ class CodeExercises
         rsort($notIntegers, SORT_NATURAL);
         $array = array_merge($integers, $notIntegers);
     }
+
+    /**
+     * excludes unique elements from an array
+     *
+     * @param array $array
+     * @return array
+     */
+    public function excludeUniqueElements(array $array) : array
+    {
+        $isUnique = fn($item) => $item === 1;
+        $counted = array_count_values($array);
+        $unique = array_keys(array_filter($counted, $isUnique));
+        return array_values(array_diff($array, $unique));
+    }
 }

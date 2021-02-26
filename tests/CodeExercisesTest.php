@@ -80,4 +80,18 @@ class CodeExercisesTest extends TestCase
         $value = $this->exercises->mergeArrays([1, 2, 3], ['a', 'b', 'c']);
         $this->assertEquals([1, 2, 3, 'a', 'b', 'c'], $value);
     }
+
+    public function testSplitKeysValues() : void
+    {
+        $array = [
+            'a' => 1,
+            'b' => 2,
+            'c' => 3,
+        ];
+        $keys = [];
+        $values = [];
+        $this->exercises->splitKeysValues($array, $keys, $values);
+        $this->assertEquals(['a', 'b', 'c'] , $keys);
+        $this->assertEquals([1, 2, 3], $values);
+    }
 }

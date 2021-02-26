@@ -123,4 +123,17 @@ class CodeExercises
     {
         return array_merge($first, $second);
     }
+
+    /**
+     * copies keys from $array to $keys and values to $values
+     *
+     * @param array $array
+     * @param array $keys
+     * @param array $values
+     */
+    public function splitKeysValues(array $array, array &$keys, array &$values) : void
+    {
+        $keys = array_keys($array);
+        $values = array_values($array);
+    }
 }

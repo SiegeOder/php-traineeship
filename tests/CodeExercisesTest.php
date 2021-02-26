@@ -100,4 +100,12 @@ class CodeExercisesTest extends TestCase
         $squares = $this->exercises->getSquares([1, 2, 3, 4 ,5]);
         $this->assertEquals([1, 4, 9, 16, 25], $squares);
     }
+
+    public function testRsortByType() : void
+    {
+        $array = [5.1, 6, 1, 2.2, 'foo', 13, 7.1, 'bar', 5];
+        $sorted = [13, 6, 5, 1, 'foo', 'bar', 7.1, 5.1, 2.2];
+        $this->exercises->rsortByType($array);
+        $this->assertEquals($sorted, $array);
+    }
 }

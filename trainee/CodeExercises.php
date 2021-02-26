@@ -148,4 +148,20 @@ class CodeExercises
         $getSquare = fn($item) => pow($item, 2);
         return array_map($getSquare, $array);
     }
+
+    /**
+     * sorts the array in descending order with variables of different types
+     *
+     * @param array $array
+     */
+    public function rsortByType(array &$array) : void
+    {
+        $isInteger = fn($value) => is_int($value);
+        $isNotInteger = fn($value) => !is_int($value);
+        $integers = array_filter($array, $isInteger);
+        $notIntegers = array_filter($array, $isNotInteger);
+        rsort($integers);
+        rsort($notIntegers, SORT_NATURAL);
+        $array = array_merge($integers, $notIntegers);
+    }
 }

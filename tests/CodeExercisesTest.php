@@ -74,4 +74,10 @@ class CodeExercisesTest extends TestCase
         $value = $this->exercises->hasThree([1, 2, 4, 5]);
         $this->assertEquals(false, $value);
     }
+
+    public function testMergeArrays() : void
+    {
+        $value = $this->exercises->mergeArrays([1, 2, 3], ['a', 'b', 'c']);
+        $this->assertEquals([1, 2, 3, 'a', 'b', 'c'], $value);
+    }
 }

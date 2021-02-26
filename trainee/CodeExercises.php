@@ -111,4 +111,16 @@ class CodeExercises
     {
         return in_array(3, $value, true);
     }
+
+    /**
+     * merges the elements of two arrays together
+     *
+     * @param array $first
+     * @param array $second
+     * @return array
+     */
+    public function mergeArrays(array $first, array $second) : array
+    {
+        return array_merge($first, $second);
+    }
 }

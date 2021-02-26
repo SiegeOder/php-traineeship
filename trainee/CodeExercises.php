@@ -5,156 +5,155 @@ namespace Trainee\Exercises;
 class CodeExercises
 {
     /**
-     * returns number of digits in the parameter
+     * Get a number of digits.
      *
      * @param int $value
      * @return int
      */
-    public function countDigits(int $value) : int
+    public function countDigits(int $value): int
     {
-        return strlen((string) $value);
+        return strlen((string)$value);
     }
 
     /**
-     * makes a string uppercase
+     * Make the string uppercase.
      *
-     * @param string $value
+     * @param string $string
      * @return string
      */
-    public function stringToUpperCase(string $value) : string
+    public function stringToUpperCase(string $string): string
     {
-        return strtoupper($value);
+        return strtoupper($string);
     }
 
     /**
-     * makes a string first character upper case, other characters lower case
+     * Make the first character in the string upper case, other characters lower case.
      *
-     * @param string $value
+     * @param string $string
      * @return string
      */
-    public function firstCharacterUpperOtherLower(string $value) : string
+    public function firstCharacterUpperOtherLower(string $string): string
     {
-        return ucfirst(strtolower($value));
+        return ucfirst(strtolower($string));
     }
 
     /**
-     * makes a string first character '!'
+     * Set the first character in the string as '!'.
      *
-     * @param string $value
+     * @param string $string
      * @return string
      */
-    public function firstCharacterToExclamationMark(string $value) : string
+    public function firstCharacterToExclamationMark(string $string): string
     {
-        return substr_replace($value, '!', 0, 1);
+        return substr_replace($string, '!', 0, 1);
     }
 
     /**
-     * returns number of values in a string
+     * Get a number of values in the string.
      *
-     * @param string $value
+     * @param string $string
      * @return array
      */
-    public function countStringValues(string $value) : array
+    public function countStringValues(string $string): array
     {
-        return array_count_values(str_split($value, 1));
+        return array_count_values(str_split($string));
     }
 
     /**
-     * returns popularity of words in a string
+     * Get popularity of words in the string.
      *
-     * @param string $value
+     * @param string $string
      * @return array
      */
-    public function countWords(string $value) : array
+    public function countWords(string $string): array
     {
-        $result = array_count_values(str_word_count($value, 1));
+        $result = array_count_values(str_word_count($string, 1));
         arsort($result);
         return $result;
     }
 
     /**
-     * checks if a string is a palindrome
+     * Determine if the string is palindrome or not.
      *
-     * @param string $value
+     * @param string $string
      * @return bool
      */
-    public function isPalindrome(string $value) : bool
+    public function isPalindrome(string $string): bool
     {
-        $value = strtolower(str_replace(' ', '', $value));
-        return strrev($value) == $value;
+        $string = strtolower(str_replace(' ', '', $string));
+        return strrev($string) == $string;
     }
 
     /**
-     * returns values that are less than the average in an array
+     * Get the values that are less than the average value in the array.
      *
-     * @param array $value
+     * @param array $array
      * @return array
      */
-    public function findLessThanAverage(array $value) : array
+    public function findLessThanAverage(array $array): array
     {
-        $average = array_sum($value)/count($value);
+        $average = array_sum($array) / count($array);
         $lessThanAverage = [];
-        foreach ($value as $item)
-        {
+        foreach ($array as $item) {
             if ($item < $average) $lessThanAverage[] = $item;
         }
         return $lessThanAverage;
     }
 
     /**
-     * checks if an array has value 3
+     * Determine if the array has element 3 or not.
      *
-     * @param array $value
+     * @param array $array
      * @return bool
      */
-    public function hasThree(array $value) : bool
+    public function hasThree(array $array): bool
     {
-        return in_array(3, $value, true);
+        return in_array(3, $array, true);
     }
 
     /**
-     * merges the elements of two arrays together
+     * Merge the elements of two arrays together.
      *
      * @param array $first
      * @param array $second
      * @return array
      */
-    public function mergeArrays(array $first, array $second) : array
+    public function mergeArrays(array $first, array $second): array
     {
         return array_merge($first, $second);
     }
 
     /**
-     * copies keys from $array to $keys and values to $values
+     * Copy keys and values from the array to the keys and the values arrays.
      *
      * @param array $array
      * @param array $keys
      * @param array $values
      */
-    public function splitKeysValues(array $array, array &$keys, array &$values) : void
+    public function splitKeysValues(array $array, array &$keys, array &$values): void
     {
         $keys = array_keys($array);
         $values = array_values($array);
     }
 
     /**
-     * returns squares of an array values
+     * Get an array of squares of the array's values.
      *
      * @param array $array
      * @return array
      */
-    public function getSquares(array $array) : array
+    public function getSquares(array $array): array
     {
         $getSquare = fn($item) => pow($item, 2);
         return array_map($getSquare, $array);
     }
 
     /**
-     * sorts the array in descending order with variables of different types
+     * Sort the array in descending order with the variables of different types.
      *
      * @param array $array
      */
-    public function rsortByType(array &$array) : void
+    public function rsortByType(array &$array): void
     {
         $isInteger = fn($value) => is_int($value);
         $isNotInteger = fn($value) => !is_int($value);
@@ -166,12 +165,12 @@ class CodeExercises
     }
 
     /**
-     * excludes unique elements from an array
+     * Get an array of values exclude unique elements from the array.
      *
      * @param array $array
      * @return array
      */
-    public function excludeUniqueElements(array $array) : array
+    public function excludeUniqueElements(array $array): array
     {
         $isUnique = fn($item) => $item === 1;
         $counted = array_count_values($array);

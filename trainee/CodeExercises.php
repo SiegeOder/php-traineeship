@@ -136,4 +136,16 @@ class CodeExercises
         $keys = array_keys($array);
         $values = array_values($array);
     }
+
+    /**
+     * returns squares of an array values
+     *
+     * @param array $array
+     * @return array
+     */
+    public function getSquares(array $array) : array
+    {
+        $getSquare = fn($item) => pow($item, 2);
+        return array_map($getSquare, $array);
+    }
 }

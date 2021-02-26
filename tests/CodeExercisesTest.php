@@ -94,4 +94,10 @@ class CodeExercisesTest extends TestCase
         $this->assertEquals(['a', 'b', 'c'] , $keys);
         $this->assertEquals([1, 2, 3], $values);
     }
+
+    public function testGetSquares() : void
+    {
+        $squares = $this->exercises->getSquares([1, 2, 3, 4 ,5]);
+        $this->assertEquals([1, 4, 9, 16, 25], $squares);
+    }
 }
